@@ -1,3 +1,4 @@
+import Cars from "./Cars";
 import CheckBox from "./CheckBox";
 import SearchBox from "./SearchBox";
 import SectionTitle from "./SectionTitle";
@@ -11,6 +12,7 @@ const CarList = () => {
         <SearchBox />
         <CheckBox />
        </div>
+       <Cars />
       </div>
     </div>
   );
