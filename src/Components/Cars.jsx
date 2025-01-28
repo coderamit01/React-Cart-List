@@ -4,7 +4,7 @@ import CarCards from "./CarCards";
 const Cars = ({cars,searchTerm}) => {
   const row= [];
   cars.forEach(car => {
-    if(car.title.toLowerCase().indexOf(searchTerm.toLowerCase()) === -1){
+    if(car.title.toLowerCase().includes(searchTerm.toLowerCase()) === false){
       return;
     }
     row.push(<CarCards key={car.id} car={car} />);

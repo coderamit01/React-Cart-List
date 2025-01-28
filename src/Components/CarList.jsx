@@ -14,6 +14,16 @@ const CarList = () => {
   ];
 
   const [searchInput,setSearchInput] = useState('');
+  const [showPremium,setShowPremium] = useState(false);
+
+  const filteredCars = cars.filter((car) => {
+    const matchesPremium = !showPremium || car.isPremium;
+    return matchesPremium;
+  });
+
+  const handleChecked = () => {
+    setShowPremium(!showPremium);
+  }
 
   return (
     <div>
@@ -21,9 +31,9 @@ const CarList = () => {
        <SectionTitle title="Car List" />
        <div className="flex items-center space-x-2 w-full py-3">
         <SearchBox searchInput={searchInput} onSearch={setSearchInput} />
-        <CheckBox />
+        <CheckBox onChecked={handleChecked} />
        </div>
-       <Cars cars={cars} searchTerm={searchInput} />
+       <Cars cars={filteredCars} searchTerm={searchInput} />
       </div>
     </div>
   );
