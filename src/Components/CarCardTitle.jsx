@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 
 const CarCardTitle = ({title}) => {
   return (
@@ -6,5 +7,9 @@ const CarCardTitle = ({title}) => {
     </>
   );
 };
+
+CarCardTitle.propTypes = {
+  title: PropTypes.string.isRequired,
+}
 
 export default CarCardTitle;

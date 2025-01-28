@@ -1,10 +1,10 @@
+import PropTypes from "prop-types";
 import CarCards from "./CarCards";
 
 const Cars = ({cars,searchTerm}) => {
   const row= [];
   cars.forEach(car => {
     if(car.title.toLowerCase().indexOf(searchTerm.toLowerCase()) === -1){
-
       return;
     }
     row.push(<CarCards key={car.id} car={car} />);
@@ -21,5 +21,11 @@ const Cars = ({cars,searchTerm}) => {
     </>
   );
 };
+
+Cars.propTypes = {
+  cars: PropTypes.array.isRequired,
+  searchTerm: PropTypes.string.isRequired,
+}
+
 
 export default Cars;

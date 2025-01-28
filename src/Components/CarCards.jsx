@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import CarCardTitle from "./CarCardTitle";
 import InfoText from "./InfoText";
 
@@ -15,5 +16,9 @@ const CarCards = ({car}) => {
     </div>
   );
 };
+
+CarCards.propTypes = {
+  car: PropTypes.object.isRequired
+}
 
 export default CarCards;

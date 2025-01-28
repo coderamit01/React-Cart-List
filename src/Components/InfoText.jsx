@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 
 const InfoText = ({name,value}) => {
   return (
@@ -7,5 +8,14 @@ const InfoText = ({name,value}) => {
     </div>
   );
 };
+
+InfoText.propTypes = {
+  name: PropTypes.string.isRequired,
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.bool,
+  ]).isRequired
+}
 
 export default InfoText;
