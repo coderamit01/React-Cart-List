@@ -13,7 +13,7 @@ const Cars = ({cars,searchTerm}) => {
     <>
       {
         row.length > 0 ? (
-          <div className="grid grid-cols-3 gap-5 pt-2">
+          <div className="grid grid-cols-4 gap-5 pt-2">
             { row }
           </div>
         ) : (<p className="text-base font-semibold">No Records Found..</p>)
